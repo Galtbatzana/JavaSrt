@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+
+
+<body>
+    <h1>Registration</h1>
+
+    <p>Username</p>
+    <input id="Username" placeholder="Username"></input>
+
+    <p>Password:</p>
+    <input id="Password" type="password" placeholder="password"></input>
+
+    <p>ConfirmationPassword:</p>
+    <input id="ConfirmationPassword" type="password" placeholder="password"></input>
+
+
+    <button id="btn">Register</button>
+
+    <p id="alert">Fill the gaps!</p>
+
+
+    <script>
+        const username = document.getElementById('Username')
+        const password = document.getElementById('Password')
+        const ConfirmationPassword = document.getElementById('ConfirmationPassword')
+
+
+        const button = document.getElementById('btn')
+        function onClick() {
+
+            console.log(ConfirmationPassword.value)
+        }
+        btn.onclick = onClick;
+        const helperText =
+            function Username() {
+                if (Username.value === "" ||
+                    Password.value === "" ||
+                    ConfirmationPassword.value === "") {
+
+                    helperText.innerText = "Fill the gaps"
+                }
+                else if (password.value != confirmPassword.value) {
+                    innerText.style =
+                else (helperText.innerText = "Registration successful");
+
+            }
+            }
+
+
+
+    </script>
+
+</body>
+
+</html>
