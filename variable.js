@@ -108,7 +108,7 @@
 
 // let total = (a / b ) / 9
 // console.log(total); // 8.6666
- 
+
 // 2. Гараас 0-100 хооронд тоон утга авч 90-100-н хооронд 
 //байвал true, бусад утгад false буцаа.
 
@@ -118,7 +118,7 @@
 // хэд хоногтой болохыг харуул.
 // 4. Өгөгдсөн эерэг тоо нь 3 эсвэл 7-ын үржвэр эсэхийг шалгана уу.
 // 5. Өгөгдсөн тооны тэгш эсвэл сондгой эсэхийг шалгана уу.
-   
+
 // const num = 7; 
 // if (num % 2 == 0) {
 //     let num = 'Even month';   
@@ -217,7 +217,7 @@
 //     let smallNum = c;
 // }
 //  console.log(smallNum);
-  
+
 // if (a < b && c < b ) {
 //     console.log("b")
 //  } else if ( b < c && c > a) {
@@ -273,34 +273,61 @@
 // } else {
 //     console.log('oddNumber')
 // }
- 
+
 // 4. Daalgavar
 // daraah 3 ni toog erembel
 
-let num1 = 12;
-let num2 = 34;
-let num3 = 56;
+// let num1 = 3;
+// let num2 = 2;
+// let num3 = 1;
 
-if (num1 > num2 ) {
-    if (num1 > num3) {
-        if (num2 > num3) {
-            console.log("num1 num2 num3")
-        }
-    }
-} if (num2 > num1) {
-    if (num2 > num3) {
-        if (num1 > num3) {
-     console.log("num2", "num1", "num3" ) 
-        } else { console.log("num2","num3","num1" )}
+// if (num1 > num2) {
+//     if (num1 > num3) {
+//         if (num2 > num3) {
+//             console.log("num1 num2 num3")
+//         }
+//         if (num1 > num2) {
+//             if (num1 > num3) {
+//                 if (num3 > num2) {
+//                     console.log("num1", "num3", "num2")
+//                 }
+//             }
+//         }
+//     }
+// }
+//     if (num2 > num1) {
+//         if (num2 > num3) {
+//             if (num1 > num3) {
+//                 console.log("num2", "num1", "num3")
+//             }
+//             if (num2 > num1) {
+//                 if (num2 > num3) {
+//                     if (num3 > num1) {
+//                         console.log("num2", "num3", "num1")
+//                     }
+//                 }
+//             }
+//         }
+//     }
+//     if (num3 > num1) {
+//         if (num3 > num2) {
+//             if (num1 > num2) {
+//                 console.log("num3", "num1", "num2")
+//             } if (num2 > num1) { console.log("num3", "num2", "num1") }
+//         }
+//     }
 
-    }
-} 
- 
-
-
+    
 
 // 5. Daalgavar
-// tegsh untugt gurvaljinii 2 tal ni A,B ugugdsun bol talbaig ol
+// tegsh untsugt gurvaljinii 2 tal ni A,B ugugdsun bol talbaig ol
+
+let a = 4;
+let b = 5;
+
+if (((a * b) / 2)) {
+    console.log()
+} 
 
 
 // 6.Daalgavar
