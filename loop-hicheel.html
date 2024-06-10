@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+<body>
+    <main>
+        <button onclick="location.reload();">Restart</button>
+        <pre>
+            <code id="output"></code>
+        </pre> 
+    </main>
+
+    <script>
+
+        const n = prompt('n too oruulna uu:');
+
+        const output = document.getElementById('output');
+
+        let sum = 0;
+        for (let i = 1; i <=n; i++) {
+            sum = sum + i;
+            sum += i;
+            output.innerText += i + "\n";
+        }
+
+        output.innerText += "1 -c N toonii niilber: " + sum;
+
+        // output.innerText = "hello";
+        // alert(sum);
+        
+    </script>
+</body>
+</html>
