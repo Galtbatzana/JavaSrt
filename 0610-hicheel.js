@@ -70,8 +70,8 @@
 // }
 
 // LEFT & RIGHT //   
-a = 8; // a ni 8 utgatai
-a = a + 2 // a ni 10 gesen utgatai bolj bn 
+// a = 8; // a ni 8 utgatai
+// a = a + 2 // a ni 10 gesen utgatai bolj bn 
 
 ////////////////////////////////////////////////////////
 
@@ -88,19 +88,6 @@ a = a + 2 // a ni 10 gesen utgatai bolj bn
 // console.log(total)
 
 
-
-const n = prompt('n too oruulna uu:');
-
-const output = document.getElementById('output');
-
-let sum = 0;
-for (let i = 1; i <=n; i++) {
-    sum = sum + i;
-    sum += i;
-    output.innerText += i + "\n";
-}
-
-output.innerText += "1 -c N toonii niilber: " + sum;
 
 
 

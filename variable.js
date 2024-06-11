@@ -322,13 +322,18 @@
 // 5. Daalgavar
 // tegsh untsugt gurvaljinii 2 tal ni A,B ugugdsun bol talbaig ol
 
-let a = 4;
-let b = 5;
+// let a = 4;
+// let b = 5;
 
-if (((a * b) / 2)) {
-    console.log()
-} 
+//     console.log((a * b) / 2);
+
 
 
 // 6.Daalgavar
 // A toog B toond huvaahad garah noogdvor ba uldegdeliig ol
+
+// const a = 5;
+// const b = 6;
+// let sum = 0; 
+// console.log(sum = a / b)  
+

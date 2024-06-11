@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+
+}
+.gogo-logo {
+    height: 50px;
+    width: 50px;
+    
+}
+.img {
+    height: 30px;
+    width: 30px;
+}

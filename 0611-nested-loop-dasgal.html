@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function Dasgal</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+  </head>
+  <body>
+    <input id="input" placeholder="entervalue.." />
+    <button onclick="run();">click</button>
+    <pre>
+        <code id="output"></code>
+    </pre>
+
+    <script>
+      function run() {
+        const n = getNumberValueFromInput();
+        const total = myFunction(n);
+        print(total);
+      }
+
+      function myFunction(n) {
+        result = "";
+
+        for (let k = 1; k <= n; k++) {
+          for (let i = 1; i <= n; i++) {
+            result += i * k + " ";
+          }
+          result += "\n"
+        }
+        return result;
+      }
+
+      function getNumberValueFromInput() {
+        const inputString = document.getElementById("input").value;
+        const n = Number(inputString);
+        return n;
+      }
+
+      function print(output) {
+        document.getElementById("output").innerText = output;
+      }
+    </script>
+  </body>
+</html>

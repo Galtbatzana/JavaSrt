@@ -231,19 +231,19 @@
 // тохиолдолд 'Enter your password: ' гэж гарч ирнэ. Харин 3 удаа буруу
 // оруулсан тохиолдолд 'Access denied!' гэж харагдана.
 
-let password = prompt("Password?");
-let i = 1;
-while (i < 3 && password !=="pass1234") {
-    prompt('enter your password!')
-    i++;
-}
-if (password === "pass1234") {
-    alert('Accesss granted'); 
-}
-else if (password !== "pass1234") {
-    alert('Enter your password!');
-}
-
+// let password = prompt("Password?");
+// let i = 1;
+// while (i < 3 && password !=="pass1234") {
+//     prompt('enter your password!')
+//     i++;
+// }
+// if (password === "pass1234") {
+//     alert('Accesss granted'); 
+// }
+// else if (password !== "pass1234") {
+//     alert('Enter your password!');
+// }
+/////////////////////////////////////////////////////////////////
 // let effort = 2;
 // let password = prompt("Password?")
 // while (effort > 0 && password !=="pass1234") {
@@ -259,3 +259,4 @@ else if (password !== "pass1234") {
 //////////////////////////////////////////////////////////////
 
 // 3. Fibonacci sequence эхний 10 тоог хэвлэ.
+
