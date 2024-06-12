@@ -13,25 +13,29 @@
         <code id="output"></code>
     </pre>
 
-    <script>
+    <script src="0611-nested-loop-dasgal.js">
+      
+      
       function run() {
         const n = getNumberValueFromInput();
-        const total = myFunction(n);
-        print(total);
+        const output = multiTable(n);
+        print(output);
       }
 
-      function myFunction(n) {
+      function multiTable(n) {
         result = "";
 
         for (let k = 1; k <= n; k++) {
           for (let i = 1; i <= n; i++) {
-            result += i * k + " ";
+            debugger;
+            const value = String(i * k);
+            result += value.padStart(3, " ") + " ";
+            debugger;
           }
           result += "\n"
         }
         return result;
       }
-
       function getNumberValueFromInput() {
         const inputString = document.getElementById("input").value;
         const n = Number(inputString);

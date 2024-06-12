@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>star-trangle</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+  </head>
+  <body>
+    <input id="input" placeholder="entervalue.." />
+    <button onclick="run();">click</button>
+    <pre>
+        <code id="output"></code>
+    </pre>
+
+    <script>
+      
+      // function run() {
+      //   const n = getNumberValueFromInput();
+      //   const output = solution(n);
+      //   print(output);
+      // }
+      
+      // function solution(n) {
+      //   let result = "";
+      //   for (let i = 0; i < n; i++) {
+      //     result = result + generatStars(i);
+      //     result = result + "\n";
+      //   } return result;
+      // }
+
+      // function generatStars(numberOfStars) {
+      //   let stars = "";
+      //   for (let i = 0; i < numberOfStars; i++) {
+      //       stars = stars + "* ";
+            
+      //   }
+      //   return stars;
+      // }
+     
+    
+
+      // function getNumberValueFromInput() {
+      //   const inputString = document.getElementById("input").value;
+      //   const n = Number(inputString);
+      //   return n;
+      // }
+
+      // function print(output) {
+      //   document.getElementById("output").innerText = output;
+      // }
+
+      function run() {
+        const n = getNumberValueFromInput();
+        const output = solution(n);
+        print(output);
+      }
+      
+      function solution(n) {
+        let result = "";
+
+        for (let i = 0; i <= n; i++) {
+          // generate spaces here... // 
+          for (let k = 0; k < n; k++) {
+            result += k - i
+            
+          }
+          result = result + generateStars(i);
+          result = result + "\n";  
+        }
+        return result;
+      }
+      ///////////////////////////////////////////////////
+
+      function generatStars(numberOfStars) {
+        let stars = "";
+
+        for (let i = 0; i < numberOfStars; i++) { 
+            stars = stars + "* ";
+        }
+        return stars;
+      }
+     
+    
+///////////////////////////////////////////////////////////
+      function getNumberValueFromInput() {
+        const inputString = document.getElementById("input").value;
+        const n = Number(inputString);
+        return n;
+      }
+
+      function print(output) {
+        document.getElementById("output").innerText = output;
+      }
+
+
+    </script>
+  </body>
+</html>
