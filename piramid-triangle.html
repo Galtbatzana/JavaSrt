@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piramid Triangle</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+</head>
+<body>
+    <input id="input" placeholder="enter value.."> 
+    <button onclick="run();">click</button>
+    <pre>
+        <code id="output"></code>
+    </pre>
+    <script>
+
+        function run() {
+            const n = getNumberValueFromInput();
+            const output = multiTable(n);
+            print(output);
+            }
+
+
+        function multiTable(n) {
+            debugger;
+            let table = "";
+                
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n - i; j++) {
+                    table += " ";
+                }
+                for (let k = 1; k <= i; k++) {
+                    table += "* ";
+                }
+                table += "\n";
+            debugger;    
+            }
+            return table;
+        }
+
+      
+        function generateStars(numberOfStars) {
+            let stars = "";
+            for (let i = 0; i < numberOfStars; i++) {
+                stars = stars + "* ";  
+            }
+            return stars;
+        }
+
+        function getNumberValueFromInput() {
+            const inputString = document.getElementById("input").value;
+            const n = Number(inputString);
+            return n;
+        }
+
+        function print(output) {
+            document.getElementById("output").innerText = output;
+        }
+    </script>
+</body>
+</html>
