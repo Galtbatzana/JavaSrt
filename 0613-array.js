@@ -4,7 +4,7 @@ const name1 = "delger";
 const name2 = "urlee";
 const name3 = "zolboo";
 
-const position = 
+const position1 = [];
 
 const names = ["bayaraa", "delger", "urlee", "zolboo"];
 
@@ -36,6 +36,7 @@ console.log(position);
 
 const ages = [21, 33, 35, 16, 19, 12, 13];
 
+// ages.findIndex(function()) dotoroo function tai baih yoestoi
 const index = ages.findIndex(function(item) {
     return item < 18;
 });
@@ -45,10 +46,17 @@ const minors = ages.filter(function(item){
     return item < 18;
 });
 console.log(minors);
+////////////////////////////////////////////////////////////////
+const arrayNames = ["bayaraa","tsetsgee","anu","zolboo","galt","enkhbadrakh",
+    "tselmeg","batzana","nyamsuren","saruul"];
+        const ehner = ["tselmeg"];
 
-
-
-
+for (let i = 0; i < arrayNames.length; i++) {
+     if (arrayNames.charAt(0) === "b") {
+        bgeerEhelsenNames = 
+     }
+    
+}
 
 
 
