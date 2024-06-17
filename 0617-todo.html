@@ -11,13 +11,19 @@
     <div class="todo-list">
 
         <div class="todo-list-head">
-            <h3>My ToDo List</h3>
+            <h5>My ToDo List</h5>
             <div class="todo-list-numbers">0/6</div>
         </div>
+        <div class="body-row">
+            <input class="body-check-box" type="checkbox">
+            <p id="title">My todo list #1</p>
+            <button class="btn-edit">edit</button>
+            <button class="btn-delete">del</button>
+        </div>
 
-        <div>
+        <div class="body">
             <input id="input" placeholder="What is next?">
-            <button onclick="addTask();">Add task</button>
+            <button class="btn" onclick="addTask();">Add task</button>
         </div>
 
     </div>
