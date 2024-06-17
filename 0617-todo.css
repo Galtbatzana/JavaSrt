@@ -1,0 +1,31 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.todo-list {
+    height: 300px;
+    width: 200px;
+    background-color: aqua;  
+}
+
+.todo-list-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(11, 107, 159); 
+    color: white;
+    padding: 5px 5px;
+}
+
+.todo-list-numbers {
+    height: 25px;
+    width: 40px;
+    background-color: rgb(14, 66, 209);
+    color: white;
+    border-color: black;
+    border-radius: 12px;
+    padding-left: 8px;
+    padding-top: 2px;
+}
