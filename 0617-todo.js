@@ -1,4 +1,5 @@
 
+
 function addTask() {
     const input = document.getElementById("input");
     console.log(input.value);
@@ -7,11 +8,23 @@ function addTask() {
 addTask();
 
 
-const todoText = document.getElementsById("title");
-console.log(todoText.innerText);
 
 function editText() {
     todoText = "";
-    const todoText = document.getElementsById("title");
+    const todoText = document.getElementById("title");
     
+}
+
+function delText() {
+    emptyText = "";
+    const todoText = document.getElementById("title");
+    console.log(todoText.innerText);
+    const emptyText = todoText;
+   
+}
+
+function addText() {
+    const titleText = document.getElementById("title");
+    titleText.innerText = input.value;
+    console.log(titleText.innerText);
 }

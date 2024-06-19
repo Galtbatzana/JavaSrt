@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="title">Hello!</h1>
+    
+    
+    <p class="text">sain uu?</p>
+    <p class="text">sain bish ee, aimar sain bn :D/<p>
+
+    <div id="content">Content</div>
+
+
+<script>
+    document.getElementById("title"); // DOM-oor Id-aar ni barij bn
+
+    const headingEl = document.getElementById("title"); 
+    // barisan elementee variable bolgoj bn //
+
+    console.log(headingEl); // console deer harj bn.
+
+    console.log(headingEl.innerText) // h1 iin Text-iig barij bn
+
+    headingEl.innerHTML = "Hello World!"; // browser deerh HTML text-iig uurchilj bn
+
+    headingEl.innerText = "<i> World <i>"; // innerText uchir bichsen text garna//
+
+    const texts = document.getElementsByClassName("text"); // class olon nuyu array shij chanartai
+    console.log(texts); 
+
+    console.log(texts[0]); // array-iig barij awah daa 
+    //hervee 
+    texts[0].innerText = "how are you?";
+
+    const content = document.getElementById("content");
+    content.innerHTML = "<strong></strong>"; 
+
+   
+
+
+
+
+
+
+</script>
+</body>
+</html>
