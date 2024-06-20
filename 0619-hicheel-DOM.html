@@ -9,7 +9,6 @@
 <body>
     <section class="section">
         <div class="container pt-6">
-           
             <div class="columns">
                 <div class="column is-halft is-offset-one-quarter">
                     <h1 class="title has-text-centered">ToDo List</h1>
@@ -19,7 +18,6 @@
                     <div class="buttons mt-6 is-justify-content-center">
                         <button id="btn-addTask" onclick="addTask();" class="button is-add-task">Add task</button>
                     </div>
-
                     <div id="tasks"></div>    
                 </div>
             </div>
@@ -28,7 +26,7 @@
     <script>
 
         const tasks = ["shalaa ugaa11", "hicheelee hiih22", "wash dishes33"];
-        
+
         function addTask() {
             const input = document.getElementById("input");
             tasks.unshift(input.value);  
@@ -36,19 +34,24 @@
         }
         addTask();
 
-       
+
         function deleteTask(position) {
             if (confirm("Are you sure?")) {
-                splice.pop(position,);
+                tasks.splice(position, 1);
                 render();
             }
         }
+        deleteTask();
 
         function editTask(position) {
-            // 
+            document.getElementById("")
+        
             render();
         }
-       
+
+        let editTask = prompt("Edit the text!");
+        
+
         function render() {
             let tasksHtml = "";
 
@@ -72,19 +75,6 @@
         }
         render();
 
-        // const tasksHtml = `
-        //             <div class="card">
-        //                 <div class="card-content">
-        //                   <div class="is-flex is-align-items-center is-justify-content-space-between">
-        //                       <div>${tasks[0]}</div>
-        //                     <div class="buttons">
-        //                         <button class="button is-small is-danger is-out lined">Edit</button>
-        //                         <button class="button is-small">Delete</button>
-        //                     </div>
-        //                   </div>
-        //                 </div>
-        //             </div>  
-        // `;
     </script>  
 </body>
 </html>
