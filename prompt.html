@@ -8,7 +8,7 @@
 <body>
     
     <button id="btn" onclick="callPrompt();">Click</button>
-    <div class="text"></div>
+    <div id="text"></div>
     <script>
 
         // document.getElementById("btn") //DOM -oor button barisan
@@ -16,16 +16,21 @@
         // prompt() dotor bichsen text ee = inputValue gsn variable bolgoloo
         // text ee console.log(inputValue); deeree harj bn.
 
-        function callPrompt() {
-            const buttonPrompt = document.getElementById("btn");
-            const inputValue = prompt();
-            console.log(inputValue);
-        }
-     
-        document.getElementsByClassName("text");
-        const text = document.getElementsByClassName("text");
-
         
+        const buttonPrompt = document.getElementById("btn");
+        const text = document.getElementById("text");
+
+        function callPrompt() {
+            const promptValue = prompt();
+            text.innerText = promptValue;
+            return text;
+        } 
+        callPrompt();
+        
+       
+
+
+
     </script>
 </body>
 </html>
