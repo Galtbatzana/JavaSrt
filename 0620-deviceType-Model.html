@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeviceType Model</title>
+</head>
+<body>
+    <input id="deviceType_input" placeholder="Enter device type..">
+    <input id="model_input" placeholder="Enter model type..">
+    <button onclick="run();"></button>
+
+    <pre>
+        <code id="output"></code>
+    </pre>
+
+    <script>
+        function run() {
+            const deviceType = getValueFrominput("deviceType_input");
+            const model = getValueFrominput("model_input");
+
+            console.log({deviceType}, model);
+            const sum = sumOfNumbers(deviceType, model);
+            printOutput(sum);
+        }
+
+        function sumOfNumbers(deviceType, model) {
+            switch(deviceType) {
+                case "mobile":
+                    switch (model) {
+                        case "iPhone":
+                            return ("Apple iphone: iOS device.")
+                            break;
+                        case "Samsung":
+                            return ("Samsung Galaxy: Android device.")
+                            break;
+                        default: return("Unknown phone model.") 
+                        break;       
+                    } 
+                case "tablet": 
+                    switch(model) {
+                        case "iPad":
+                            return("Apple ipad: IOS device.")
+                            break;
+                        case "Galaxy Tab":
+                            return("Samsung Galaxy Tab: Android device.")
+                            break;
+                        default: return("Unknown tablet model.")
+                            break;
+
+                    }
+                case "laptop":
+                    switch(model) {
+                        case "MacBook":
+                            return("Apple MacBook: macIOS device.")
+                            break;
+                        case "Dell":
+                            return("Dell XPS: Windows device.")
+                            break;
+                        default: return("Unknown laptop model.")
+                            break;        
+                    } 
+                 default: return("unknown device type.")
+                    break;
+
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
