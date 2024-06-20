@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo DOM</title>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"> 
+</head>
+<body>
+    <section class="section">
+        <div class="container pt-6">
+            <div class="columns">
+                <div class="column is-halft is-offset-one-quarter">
+                    <h1 class="title has-text-centered">ToDo List</h1>
+                    <div class="control">
+                        <input id="input" class="input is-focused" type="text" placeholder="Focused input" />
+                    </div>
+                    <div class="buttons mt-6 is-justify-content-center">
+                        <button id="btn-addTask" onclick="addTask();" class="button is-add-task">Add task</button>
+                    </div>
+                    <div id="tasks"></div>    
+                </div>
+            </div>
+        </div> 
+    </section>
+    <script>
+
+        const tasks = ["shalaa ugaa11", "hicheelee hiih22", "wash dishes33"];
+
+        function addTask() {
+            const input = document.getElementById("input");
+            tasks.unshift(input.value);  
+            render();
+        }
+        addTask();
+
+
+        function deleteTask(position) {
+            if (confirm("Are you sure?")) {
+                tasks.splice(position, 1);
+                render();
+            }
+        }
+        deleteTask();
+
+        function editTask(position) {
+            document.getElementById("")
+        
+            render();
+        }
+
+        let editTask = prompt("Edit the text!");
+        
+
+        function render() {
+            let tasksHtml = "";
+
+            for (let i = 0; i < tasks.length; i++) {
+            const oneTask = `
+                    <div class="card">
+                        <div class="card-content">
+                          <div class="is-flex is-align-items-center is-justify-content-space-between">
+                              <div>${tasks[i]}</div>
+                            <div class="buttons">
+                                <button class="button is-small" onclick="editTask(${i});">Edit</button>
+                                <button class="button is-small is-danger is-outlined" onclick="deleteTask(${i});">Delete</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+            `;
+            tasksHtml = tasksHtml + oneTask;    
+             }
+        document.getElementById("tasks").innerHTML = tasksHtml;            
+        }
+        render();
+
+    </script>  
+</body>
+</html>
