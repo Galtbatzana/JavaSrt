@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Button innerText</title>
+</head>
+<body>
+
+    <input id="input"> 
+
+    <button id="btn" onclick="run();">click me</button>
+
+    <div id="text">Dom JavaScript!</div>
+
+    <script>
+
+        const textEl = document.getElementById("text");
+        textEl.innerText = "Dom oo sain uzee";
+        // console.log(textEl.innerText);
+
+        
+        
+        document.getElementById("input");
+        const input = document.getElementById("input");
+        
+        function run() {
+            textEl.innerText = input.value;
+            return textEl;
+        }
+        run();
+
+
+    </script>
+
+
+</body>
+</html>
