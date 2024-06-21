@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeviceType Model</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
 </head>
 <body>
     <input id="deviceType_input" placeholder="Enter device type..">
     <input id="model_input" placeholder="Enter model type..">
-    <button onclick="run();"></button>
+    <button onclick="run();">check btn</button>
 
     <pre>
         <code id="output"></code>
@@ -65,8 +66,14 @@
 
             }
         }
+        function getValueFrominput(inputId) {
+            const inputString = document.getElementById(inputId).value;
+            return inputString; 
+        }
 
-
+        function printOutput(output) {
+            document.getElementById("output").innerText = output; 
+        }
 
     </script>
 </body>
