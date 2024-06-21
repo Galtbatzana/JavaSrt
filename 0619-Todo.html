@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,39 +27,50 @@
 
         // const object =  // done
         const tasks = [
-        {name: "shalaa ugaah", status: 'done'}, 
+           
+        {name: "shalaa ugaah", status: 'todo'}, 
         {name: "hogoo shuurdeg", status: 'done'}, 
-        {name: "shalaa ugaah", status: 'done'}
+        {name: "shalaa ugaah", status: 'todo'}
         ];
-
+///////////////////////////////////////////////////////
         function addTask() {
             const input = document.getElementById("input");
-            tasks.unshift(input.value);  
+            tasks.unshift({name: input.value, status: 'todo'});  // object oor oruulah
+            input.value = '';
             render();
         }
-        addTask();
+     
 
-
+////////////////////////////////////////////////////////
         function deleteTask(position) {
             if (confirm("Are you sure?")) {
                 tasks.splice(position, 1);
                 render();
             }
         }
-        deleteTask();
-
-        const content = document.getElementById("content");
+      
         
-
+//////////////////////////////////////////////////////////
         function editTask(position) {
-            const oldValue = tasks[position].name;
+            const oldValue = tasks[position].name; // task-iin object-iin 
             const newValue = prompt("EditTask", oldValue);
             if (newValue !== null) {
                 tasks[position].name = newValue;
             }
             render();
         }
-
+       
+/////////////////////////////////////////////////////////////
+        // function changeStatus() {
+        //     const oldValue = tasks[position].status; // tasks-iin status solih
+        //     if (oldValue !== 'todo'){
+        //         tasks[position].status = "done";
+        //     }
+        //     else { oldValue = "todo" }
+        // }
+        // changeStatus();
+        
+/////////////////////////////////////////////////////////////
         function render() {
             let tasksHtml = "";
 
