@@ -23,8 +23,8 @@
             </div>
         </div> 
     </section>
-    <script>
 
+    <script>
         // const object =  // done
         const tasks = [
            
@@ -40,7 +40,6 @@
             render();
         }
      
-
 ////////////////////////////////////////////////////////
         function deleteTask(position) {
             if (confirm("Are you sure?")) {
@@ -48,8 +47,7 @@
                 render();
             }
         }
-      
-        
+           
 //////////////////////////////////////////////////////////
         function editTask(position) {
             const oldValue = tasks[position].name; // task-iin object-iin 
@@ -61,15 +59,21 @@
         }
        
 /////////////////////////////////////////////////////////////
-        // function changeStatus() {
-        //     const oldValue = tasks[position].status; // tasks-iin status solih
-        //     if (oldValue !== 'todo'){
-        //         tasks[position].status = "done";
+        // function changeStatus(position) {
+        //     let oldValue = tasks[position].status; // tasks-iin status solih
+        //     // let newValue = "done";
+        //     if (oldValue !== 'todo') {
+        //         newValue = tasks[position].status; 
+        //         let newValue = "done";
         //     }
-        //     else { oldValue = "todo" }
+        //     if (oldValue !== 'done') {   
+        //         tasks[position].status = 'todo';
+        //         let newValue = "todo";  
+        //     } // else {}
+            
+        //     render();
         // }
-        // changeStatus();
-        
+       
 /////////////////////////////////////////////////////////////
         function render() {
             let tasksHtml = "";
@@ -80,7 +84,7 @@
                         <div class="card-content">
                           <div class="is-flex is-align-items-center is-justify-content-space-between">  
                               <div>
-                                <input type="checkbox" class="checkbox" ${tasks[i].status === "done" ? "checked" : ""} />
+                                <input type="checkbox" id="checkbox" onclick="changeStatus(${i});" class="checkbox" ${tasks[i].status === "done" ? "checked" : ""} />
                                 ${tasks[i].status === "done" ? '<s>${tasks[i].name}</s>' : tasks[i].name}
                                 </div>
                             <div class="buttons">
@@ -97,6 +101,9 @@
         }
         render();
 
+
     </script>  
+
+
 </body>
 </html>
