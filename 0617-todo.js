@@ -1,13 +1,31 @@
+const tasks = ["My todo list #1", "wash dishes", "watch football"];
 
 
 function addTask() {
     const input = document.getElementById("input");
-    console.log(input.value);
-    // constent.innerHTML = content.innerHTML + "<div>" + input.value + "</div>";   
+    tasks.unshift(input.value);
+    input.value = "";
+    render(); 
 }
-addTask();
 
+function render() {
+    let tasksHtml = "";
 
+for (let i = 0; i < tasks.length; i++) {
+    
+    const oneTask = `
+    <div class="body-row">
+        <input class="body-check-box" type="checkbox" />
+        <p id="title">My todo list #1</p>
+        <button class="btn-edit">edit</button>
+        <button class="btn-delete" onclick="delText();">del</button>
+    </div>
+    `;
+    tasksHtml = tasksHtml + oneTask;  
+}
+document.getElementById("tasks").innerHTML = tasksHtml;
+}
+render();
 
 function editText() {
     todoText = "";
