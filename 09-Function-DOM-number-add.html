@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <input id="input" placeholder="Insert text...">
+    <button onclick="run();">Click me</button>
+    <pre>
+        <code id="output">text</code>
+    </pre>
+
+    <script>
+        // const input = document.getElementById("input");
+        // const output = document.getElementById("output");
+
+        function run() { // button darhad ajildag function //
+            const n = getNumberValueFromInput();  // input-ees too awaad n bolgoj bn //
+            const sum = sumOfAddedNumbers(n);  // n too-g nemdeg function-d oruulaad niilber-g sum bolgood //  
+            printOutput(sum); // print - d sum aa uguud hevle bn //
+        } 
+        //////// input-s string awaad too bolgoj bn. /////////////////////////
+        function getNumberValueFromInput() { 
+            const inputString = document.getElementById("input").value;
+            const n = Number(inputString);  
+            return n;
+        }
+        //////// toonii niilber-iig oldog function ///////////////////////////
+        function sumOfAddedNumbers(n) { 
+            let sum = 0;
+            for (let i = 0; i <= n; i++) {
+                sum += i;
+            }
+            return sum;  
+        }
+        ////////  output dotorh text -iig function bolgoj hevlej bn //////////
+        function printOutput(output) {
+            document.getElementById("output").innerText = output;
+        }
+
+    </script>
+</body>
+</html>
