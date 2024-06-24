@@ -11,9 +11,9 @@
         <div class="container pt-6">
             <div class="columns">
                 <div class="column is-halft is-offset-one-quarter">
-                    <h1 class="title has-text-centered">ToDo List</h1>
+                    <h1 class="title has-text-centered">ToDo List(<span id="statistics"></span>)</h1>
                     <div class="control">
-                        <input id="input" class="input is-focused" type="text" placeholder="Focused input" />
+                        <input id="input" onkeydown="addOnEnter(event)" on class="input is-focused" type="text" placeholder="Focused input" />
                     </div>
                     <div class="buttons mt-6 is-justify-content-center">
                         <button id="btn-addTask" onclick="addTask();" class="button is-add-task">Add task</button>
@@ -23,23 +23,33 @@
             </div>
         </div> 
     </section>
-
     <script>
+
+        const tasksString = localStorage.getItem("Tasks");
+        const tasks = JSON.parse(tasksString) || [];
+
+/////////////////////////////////////////////////////////       
         // const object =  // done
-        const tasks = [
+        // const tasks = [
            
-        {name: "shalaa ugaah", status: 'todo'}, 
-        {name: "hogoo shuurdeg", status: 'done'}, 
-        {name: "shalaa ugaah", status: 'todo'}
-        ];
+        // {name: "shalaa ugaah", status: 'todo'}, 
+        // {name: "hogoo shuurdeg", status: 'done'}, 
+        // {name: "shalaa ugaah", status: 'todo'}
+        // ];
 ///////////////////////////////////////////////////////
         function addTask() {
-            const input = document.getElementById("input");
-            tasks.unshift({name: input.value, status: 'todo'});  // object oor oruulah
-            input.value = '';
+            const newTask = document.getElementById("input").value;
+            
+            if(newTask === "") {
+                alert("Enter task in the input");
+                return;
+            }
+
+            tasks.unshift({name: newTask, status: 'todo'});  // object oor oruulah
+            document.getElementById("input").value = '';
             render();
         }
-     
+
 ////////////////////////////////////////////////////////
         function deleteTask(position) {
             if (confirm("Are you sure?")) {
@@ -47,7 +57,14 @@
                 render();
             }
         }
-           
+
+///////////////////////////////////////////////////////
+ function addOnEnter(event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        }  
+
 //////////////////////////////////////////////////////////
         function editTask(position) {
             const oldValue = tasks[position].name; // task-iin object-iin 
@@ -59,21 +76,26 @@
         }
        
 /////////////////////////////////////////////////////////////
-        // function changeStatus(position) {
-        //     let oldValue = tasks[position].status; // tasks-iin status solih
-        //     // let newValue = "done";
-        //     if (oldValue !== 'todo') {
-        //         newValue = tasks[position].status; 
-        //         let newValue = "done";
-        //     }
-        //     if (oldValue !== 'done') {   
-        //         tasks[position].status = 'todo';
-        //         let newValue = "todo";  
-        //     } // else {}
-            
-        //     render();
-        // }
-       
+        function changeStatus(position) {  // function dotoroo position uguh!!!!! //
+            if (tasks[position].status === "done") {
+                tasks[position].status = "todo";
+            } else {
+                tasks[position].status = "done";
+            }
+
+            // const oldValue = tasks[position].status; // tasks-iin status solih
+            // const newValue = "done";
+            // const checked = "todo";
+            // if (oldValue == 'done'){
+            //     tasks[position].status = "checked"  
+            // }
+            // else { tasks[position].status = "done" 
+            // }
+    
+            render();
+        }
+        
+        
 /////////////////////////////////////////////////////////////
         function render() {
             let tasksHtml = "";
@@ -84,8 +106,8 @@
                         <div class="card-content">
                           <div class="is-flex is-align-items-center is-justify-content-space-between">  
                               <div>
-                                <input type="checkbox" id="checkbox" onclick="changeStatus(${i});" class="checkbox" ${tasks[i].status === "done" ? "checked" : ""} />
-                                ${tasks[i].status === "done" ? '<s>${tasks[i].name}</s>' : tasks[i].name}
+                                <input type="checkbox" class="checkbox" onclick="changeStatus(${i});" ${tasks[i].status === "done" ? "checked" : ""} />
+                                ${tasks[i].status === "done" ? `<s>${tasks[i].name}</s>` : tasks[i].name}
                                 </div>
                             <div class="buttons">
                                 <button class="button is-small" onclick="editTask(${i});">Edit</button>
@@ -97,13 +119,20 @@
             `;
             tasksHtml = tasksHtml + oneTask;    
              }
-        document.getElementById("tasks").innerHTML = tasksHtml;            
+        document.getElementById("tasks").innerHTML = tasksHtml; 
+        
+        let doneCount = 0;
+            for (let i = 0; i < tasks.length; i++) {
+                if (tasks[i].status === "done") {
+                    doneCount++;
+                }
+            }
+            document.getElementById("statistics").innerText = `${doneCount}/${tasks.length}`;
+
+            localStorage.setItem("Tasks", JSON.stringify(tasks));
         }
         render();
 
-
     </script>  
-
-
 </body>
 </html>
