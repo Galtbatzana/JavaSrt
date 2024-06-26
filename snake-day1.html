@@ -9,21 +9,174 @@
             width: 800px;
             height: 600px;
             background-color: aqua;
+            position: relative;
         }
-        .head {
+        .head, 
+        .part {
             width: 20px;
             height: 20px;
             background-color: black;
+            position: absolute;
+            border-radius: 5px;
+            
+        }
+        .food {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            border-radius: 5px;
         }
 
     </style>
+
 </head>
-<body>
-
-    <div class="area">
-        <div class="head"></div>           
+<body onkeydown="handleKeydown(event);">
+    <div class="area" id="area">
+        <div class="food" id="food"></div>
+        <!-- <div class="head" id="head"></div> shaardlagagui body uusgej bga -->
+        <div id="body">
+            <!-- <div class="part" style="top: 40px; left: 40px;"></div> -->
+        </div>           
     </div>
+    <button>Reset Game</button>
 
-    <script></script>
+    <button onclick="changeDirection('up');">Up</button>
+    <button onclick="changeDirection('down');">Down</button>
+    <button onclick="changeDirection('right');">Right</button>
+    <button onclick="changeDirection('left');">Left</button>
+
+    <script>
+      ///////////////////////////////////////////////////////////////////  
+    
+        const area = document.getElementById("area");
+        const scale = 20;
+        const areaWidth = 20;
+        const areaHeight = 16;
+
+        let positionX = 5;
+        let positionY = 5;
+
+        const bodyCordinates = [
+            {x: 5, y: 5},
+            {x: 6, y: 5},
+            {x: 7, y: 5},
+            {x: 8, y: 5},
+        ];
+
+        const food = {
+            x: 5,
+            y: 5,
+        };
+
+        let direction = "right"; // "top", "left", "right";
+
+        function resetGame () {
+            area.style.areaWidth = `${areaWidth * scale}px`;
+            area.style.areaHeight = `${areaHeight * scale}px`;
+            render ();
+        }
+//////////////////////////////////////////////////////////////////
+        handleKeydown = (event) => {
+            switch(event.key) {
+                case "ArrowUp": 
+                case "w": 
+                    changeDirection("up");
+                    break
+                case "ArrowDown": 
+                case "s": 
+                    changeDirection("down");
+                    break
+                case "ArrowRight":
+                case "d":  
+                    changeDirection("right");
+                    break
+                case "ArrowLeft":
+                case "a":  
+                    changeDirection("left");
+                    break    
+                }
+        }
+////////////////////////////////////////////////////////////////////
+        changeDirection = (value) => {
+            if (direction === 'left' || direction === 'right') {
+                if (value === 'up' || value === 'down') {
+                    direction = value;
+                }
+            } else if (direction === "down" || direction === "up") {
+                if (value === "right" || value === "left") {
+                    direction = value;
+                }
+            }
+        }
+///////////////////////////////////////////////////////////////////
+        function goRight () {
+            positionX += 1;
+            if (positionX > areaWidth - 1) {
+                positionX = 0;
+            }            
+        }
+        function goLeft () {
+            positionX -= 1;
+            if (positionX < 0) {
+                positionX = areaWidth - 1;
+            }        
+        }
+        function goUp () {
+            positionY -= 1;
+            if (positionY < 0) {
+                positionY = areaHeight - 1;
+            }  
+        }
+        function goDown () {
+            positionY += 1;
+            if (positionY > areaHeight - 1) {
+                positionY = 0;
+            }  
+        }
+///////////////////////////////////////////////////  
+        const bodyContainer = document.getElementById("body");
+
+        function render () {
+            if (food.x === positionX && food.y === positionY) {
+                bodyCordinates.unshift(bodyCordinates[0]);
+            }    
+
+            let bodyHtml = "";
+            for (let i = 0; i < bodyCordinates.length; i++) {
+                bodyHtml += `<div class="part" style="top: ${bodyCordinates[i].y * scale}px; left: ${bodyCordinates[i].x * scale}px;"></div>`; 
+            }
+
+            bodyContainer.innerHTML = bodyHtml; 
+        }
+///////////////////////////////////////////////////
+        function gameLoop () {
+            switch(direction) {
+                case "up": 
+                    goUp();
+                    break;
+                case "down": 
+                    goDown();
+                    break;
+                case "right": 
+                    goRight();
+                    break;
+                case "left": 
+                    goLeft();
+                    break;
+            }
+
+            bodyCordinates.push({ x: positionX, y: positionY });
+            bodyCordinates.shift();
+
+            render();
+        }
+   //////////////////////////////////////////////////     
+        //reset();
+         setInterval(gameLoop, 500);
+
+    </script>
 </body>
 </html>
