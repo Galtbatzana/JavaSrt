@@ -7,6 +7,11 @@
 </head>
 <body>
 
+    <input id="input">
+    <button id="btn" onclick="run();">Click</button>
+    <pre>
+        <code id="output"></code>
+    </pre>
 
     <script>
 //////////////////////////////////////////////////////////////
@@ -17,18 +22,46 @@
 // "orange" байвал "Oranges are orange." 
 // бусад тохиолдолд "unknown fruit." гэсэн үр дүнг буцаана уу.
 
-        prompt() 
+        const input = document.getElementById("input");
+        input.value;
+
+       
+
+    function run() {
+        text.innerText = input.value;
+        return text;
+        printOutput();
+    }
+       
         const fruits = apple;
+
+    if (fruits === apple) {
+       console.log("Apples are red or green.");
+    } else if (fruits === banana) {
+        console.log("Bananas are yellow."); 
+    } else if (fruits === orange) {
+        console.log("oranges are orange");
+    } else {
+        fruits = "unknown fruit"; 
+    } 
+
+   
+    function printOutput() {
+        const text = document.getElementById("output");
+        return text.innerText
+    }
+
+        // const fruits = apple;
         
-        if (fruits === apple) {
-           console.log("Apples are red or green.");
-        } else if (fruits === banana) {
-            console.log("Bananas are yellow."); 
-        } else if (fruits === orange) {
-            console.log("oranges are orange");
-        } else {
-            fruits = "unknown fruit"; 
-        } 
+        // if (fruits === apple) {
+        //    console.log("Apples are red or green.");
+        // } else if (fruits === banana) {
+        //     console.log("Bananas are yellow."); 
+        // } else if (fruits === orange) {
+        //     console.log("oranges are orange");
+        // } else {
+        //     fruits = "unknown fruit"; 
+        // } 
 ////////switch-case-default///////////////////////////////////
 
         // switch (fruits) {
